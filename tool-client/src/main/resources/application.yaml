@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: tool-client
+  ai:
+    mcp:
+      client:
+        toolcallback:
+          enable: true
+        sse:
+          Connections:
+            toolsServer:
+              url: http://localhost:8080
+    ollama:
+      base-url: http://127.0.0.1:11434
+      chat:
+        options:
+          model: lfm2.5-thinking:latest
+
+server:
+  port: 8081
+
+#spring.application.name=tool-client
+#server.port=8081
+#
+#spring.ai.mcp.client.type=SYNC
+#spring.ai.mcp.client.initiated=true
+#spring.ai.mcp.client.request-timeout=30s
+#spring.ai.mcp.client.annotation-scanner.enabled=true
+#spring.ai.mcp.client.sse.connection.mcp-server-1.url=http://localhost:8080
+#
+#spring.ai.ollama.chat.model=tinyllama:latest
+#
+#spring.ai.mcp.client.toolcallback.enabled=true
+#spring.ai.ollama.base-url=http://127.0.0.1:11434
+#
+#logging.file.name=./logs/spring-boot-ai-mcp-server.log
+#logging.level.org.springframework.ai.mcp=TRACE
