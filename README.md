@@ -1,5 +1,3 @@
-# Project Documentation
-
 ## Overview
 This project is designed to provide tools for deploying and managing AI models using the Spring framework. It simplifies the integration of machine learning capabilities with Java applications.
 
