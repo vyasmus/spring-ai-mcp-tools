@@ -1,38 +1,49 @@
-## Overview
-This project is designed to provide tools for deploying and managing AI models using the Spring framework. It simplifies the integration of machine learning capabilities with Java applications.
+# Spring-AI-MCP-Tools
 
-## Features
-- Easy integration with existing Spring applications
-- Support for multiple AI models
-- Comprehensive API for model management
-- Built-in support for various data formats
+Spring-AI-MCP-Tools is a collection of Spring Boot utilities, components, and examples designed to help teams build, operate, and integrate AI model control plane workflows (MCP — Model Control Plane) with Spring applications. This repository contains reusable building blocks for model lifecycle management, model routing, observability, and simple adapters to popular LLM/embedding providers.
 
-## Getting Started
-1. **Clone the repository:**  
-   `git clone https://github.com/vyasus/spring-ai-mcp-tools.git`
-2. **Install dependencies:**  
-   Navigate into the directory and run:  
-   `mvn install`
-3. **Run the application:**  
-   `mvn spring-boot:run`
+> NOTE: "MCP" in this README is used to mean "Model Control Plane" — a set of services and components that manage model discovery, routing, configuration, and observability. If MCP in your project means something else (e.g., Minecraft tools, multi-cluster platform), update the name and examples accordingly.
 
-## Usage Examples
-- **Loading a model:**  
-```java
-ModelLoader loader = new ModelLoader();
-AIModel model = loader.load("path/to/model");
-```
-- **Predicting with a model:**  
-```java
-Prediction prediction = model.predict(inputData);
-```
+## Key features
 
-## Contributing Guidelines
-We welcome contributions from the community! Please follow these steps:
-1. Fork the repository
-2. Create a new branch (e.g., `feature/my-feature`)
-3. Make your changes and commit them
-4. Open a pull request describing your changes
+- Reusable Spring Boot starters and components for model discovery and routing
+- Connector/adapters to common LLM providers and embedding services
+- Utilities for model metadata, versioning, and configuration
+- Simple ingestion and preprocessing helpers for text/document sources
+- Example services and REST endpoints to demo common MCP flows
+- Integration patterns for observability (metrics, tracing) and persistence
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Technology stack
+
+- Java (100% of repository)
+- Spring Boot (3.x+)
+- Spring AI (where applicable)
+- Maven (build)
+- Optional: Docker / Docker Compose for examples
+
+## Prerequisites
+
+- JDK 17 or later (adjust to your project's target Java version)
+- Maven 3.6+ (or use the included Maven wrapper: ./mvnw)
+- Docker (optional — for running sample adapters or databases)
+- Optional: credentials or local instances for LLM/embedding providers you plan to use
+
+## Repository layout (suggested)
+
+This repository is intended to be modular. Example layout:
+
+- /core — core MCP abstractions (ModelRegistry, Router, Metadata model)
+- /connectors — adapters for LLMs and embedding providers
+- /ingest — ingestion and preprocessing utilities
+- /examples — runnable example apps and integration demos
+- /docs — design notes and operation docs
+
+Adjust to the actual module structure present in this repo.
+
+## Getting started (quickstart)
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/vyasmus/spring-ai-mcp-tools.git
+cd spring-ai-mcp-tools
