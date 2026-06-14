@@ -5,3 +5,5 @@
 *.scss linguist-detectable=true
 *.yaml linguist-detectable=true
 *.yml linguist-detectable=true
+*.ts linguist-detectable=true
+*.js linguist-detectable=true
